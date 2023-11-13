@@ -35,6 +35,9 @@
 
 		<!-- client project custom properties -->
 		<web-app.url>https://practice.automationtesting.in/</web-app.url>
+		<web-url.tp3.home>https://practice.automationtesting.in</web-url.tp3.home>
+		<web-url.tp3.myAccount>https://practice.automationtesting.in/my-account</web-url.tp3.myAccount>
+
 
 	</properties>
 	<profiles>

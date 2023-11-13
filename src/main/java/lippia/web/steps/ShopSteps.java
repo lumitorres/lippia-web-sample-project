@@ -3,22 +3,26 @@ package lippia.web.steps;
 import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.*;
 import lippia.web.services.ShopService;
-import lippia.web.services.SuperiorBarNavigationBarService;
 
 public class ShopSteps extends PageSteps {
-
-    @Given("The client is in google page")
-    public void home() {
-        SuperiorBarNavigationBarService.navegarWeb();
+    @Given("The client is in the homepage for shop feature")
+    public void theClientIsInTheHomepage() {
+        ShopService.navigateHomePage();
     }
 
-    @When( "The client tap on Shop menu" )
-    public void theClientTapOnShop() {
-        SuperiorBarNavigationBarService.tapMenu();
+    @When("I Click on Shop Menu")
+    public void shopMenu() {
+        ShopService.clickShopMenu();
     }
 
-    @Then( "The client see Filter By Price" )
-    public void theClientSee(  ) {
-        ShopService.verifyPage();
+    @And("I select sort by (.*) from sorting dropdown menu")
+    public void selectSorting(String sortingChoice) {
+        ShopService.clickSortingDropDownMenu();
+        ShopService.clickDropdownItem(sortingChoice);
+    }
+
+    @Then("See sorted products by (.*)")
+    public void verifySortingSelected(String sortingChoice) {
+        ShopService.verifySortingOptionIsSelected(sortingChoice);
     }
 }
