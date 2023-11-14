@@ -38,11 +38,11 @@
 
 	</properties>
 	<profiles>
-	
+
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		<!--    Profiles related to Browser requirementes    -->
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-		
+
 		<profile>
 			<id>chrome</id>
 			<activation>
@@ -61,7 +61,7 @@
 				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/firefoxCapabilities.json</crowdar.driver.capabilities.json_path>
 			</properties>
 		</profile>
-		
+
 		<profile>
 			<id>chromeHeadless</id>
 			<properties>
@@ -73,7 +73,7 @@
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		<!--   Profiles related to Driver Instance petition   -->
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-		
+
 		<profile>
 			<id>local</id>
 			<activation>
@@ -84,8 +84,8 @@
 			</properties>
 		</profile>
 
-				
-		<profile> 
+
+		<profile>
 			<id>stack_local</id>
 			<properties>
 				<crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
