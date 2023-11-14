@@ -22,7 +22,6 @@ public class HomeService extends ActionManager {
 
     public static void clickViewBasketButton() {
         ActionManager.click(HomeConstants.LOCATOR_VIEW_BASKET_BUTTON);
-
     }
 
     public static void validateMenuItemPrice() {
