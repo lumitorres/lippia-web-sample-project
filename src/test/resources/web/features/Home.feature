@@ -1,9 +1,10 @@
-
+@Smoke
 Feature: Home Page
 
   Background:
     Given The user is in home page URL
 
+  @VerifyArrivalsAds
   Scenario: Home-Arrivals-Add to Basket-Items-Check-out-Payment Gateway
     When The user clicks on the image in the Arrivals
     And The user clicks on the Add To Basket button which adds that book to your basket
@@ -13,6 +14,7 @@ Feature: Home Page
     And The user clicks on Proceed to Check out button
     Then The user has the feasibility to add coupon in the payment gateway page and also he can find billing, order and additional details.
 
+  @VerifyArrivalsAdsAndPayment
   Scenario Outline: Home-Arrivals-Add to Basket-Items-Check-out-Payment Gateway-Place order
     When The user clicks on the image in the Arrivals
     And The user clicks on the Add To Basket button which adds that book to your basket

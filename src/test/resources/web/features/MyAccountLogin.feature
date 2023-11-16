@@ -1,10 +1,11 @@
-# @Smoke
+@Smoke
 Feature: MY ACCOUNT - LOGIN
 
   Background:
     Given The user is in home page URL
     And The user clicks on My Account Menu
 
+  @LoginFailHandlesSensitive
   Scenario Outline: Login-Handles case sensitive
     When The user enter case changed username "<username>"
     And The user enter case changed password "<password>"
@@ -15,6 +16,7 @@ Feature: MY ACCOUNT - LOGIN
       | username                 | password   |
       | ludmilatorresg@gmail.com | lumi202064 |
 
+  @LoginSuccessful
   Scenario Outline: Login-Authentication
     When The user enter case changed username "<username>"
     And The user enter case changed password "<password>"

@@ -1,9 +1,11 @@
+@Smoke
 Feature: My Account
 
   Background:
     Given The user is in home page URL
     And The user clicks on My Account Menu
 
+  @LoginSuccessful
   Scenario Outline: My Accounts - Log Out
     When The user enter case changed username "<username>"
     And The user enter case changed password "<password>"
@@ -17,6 +19,7 @@ Feature: My Account
       | username                 | password   |
       | ludmilatorresg@gmail.com | Lumi202064 |
 
+  @LoginAndAccountDetails
   Scenario Outline: My Account -Account details
     When The user enter case changed username "<username>"
     And The user enter case changed password "<password>"
