@@ -26,7 +26,6 @@ public class MyAccountLoginSteps extends PageSteps {
     @And("The user clicks on login button")
     public void theUserClicksOnLoginButton() {
         MyAccountLoginService.clickLoginButton( );
-
     }
 
     @And("The user clicks back button")
@@ -37,7 +36,6 @@ public class MyAccountLoginSteps extends PageSteps {
     @Then("Login must fail saying incorrect username or password {string}")
     public void loginMustFailSayingIncorrectUsernamePassword(String userName) {
         MyAccountLoginService.validateLoginFailedForIncorrectPassword(userName);
-
     }
 
     @And("The user clicks on logout link")
