@@ -1,7 +1,40 @@
-Feature: 
+@Smoke
+Feature: My Account
 
-#  @Smoke
-#  Scenario: Definir
-#    Given The client is in google page
-#    When The client tap on Shop menu
-#    Then The client see Filter By Price
+  Background:
+    Given The user is in home page URL
+    And The user clicks on My Account Menu
+
+  Scenario Outline: My Accounts - Log Out
+    When The user enter case changed username "<username>"
+    And The user enter case changed password "<password>"
+    And The user clicks on login button
+    And The user must successfully login to the web page
+    And The user clicks on My Account Menu
+    And The user clicks on logout link
+    Then The user user successfully comes out from the site
+
+    Examples:
+      | username                 | password   |
+      | ludmilatorresg@gmail.com | Lumi202064 |
+
+  Scenario Outline: My Account -Account details
+    When The user enter case changed username "<username>"
+    And The user enter case changed password "<password>"
+    And The user clicks on login button
+    And The user must successfully login to the web page
+    And The user clicks on My Account Menu
+    And The user clicks on Account details
+    Then The user ser view account details where he can change his password also "<username>"
+
+    Examples:
+      | username                 | password   |
+      | ludmilatorresg@gmail.com | Lumi202064 |
+
+
+
+
+
+
+
+

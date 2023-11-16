@@ -5,7 +5,6 @@ Feature: My  account registration
     Given The user is in home page URL
     And The user clicks on My Account Menu
 
-  @Smoke
   Scenario Outline: Registration with empty data
     When The user enter "<email>" in Email Address TextBox
     And The user enter "<password>" in password TextBox
