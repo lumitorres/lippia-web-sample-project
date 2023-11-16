@@ -1,9 +1,10 @@
-@Smoke
+#@Smoke
 Feature: My Account
 
   Background:
     Given The user is in home page URL
     And The user clicks on My Account Menu
+    And The user verify LogOut
 
   @LoginSuccessful
   Scenario Outline: My Accounts - Log Out

@@ -1,9 +1,10 @@
-@Smoke
+#@Smoke
 Feature: My  account registration
 
   Background:
     Given The user is in home page URL
     And The user clicks on My Account Menu
+    And The user verify LogOut
 
   @DateRegistrationEmpty
   Scenario Outline: Registration with empty data

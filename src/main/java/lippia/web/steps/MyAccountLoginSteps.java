@@ -1,10 +1,12 @@
 package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
+import com.crowdar.core.actions.ActionManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.services.MyAccountLoginService;
+import org.testng.Assert;
 
 
 public class MyAccountLoginSteps extends PageSteps {
@@ -47,5 +49,10 @@ public class MyAccountLoginSteps extends PageSteps {
     public void validateUserLoggedStatus(String isLoggedIn) {
         MyAccountLoginService.navigateMyAccount( );
         MyAccountLoginService.validateUserIsLoggedIn(isLoggedIn.equals("true"));
+    }
+
+    @And("The user verify LogOut")
+    public void theUserVerifyLogOut() {
+        MyAccountLoginService.verifyUserIsLoggedOut();
     }
 }

@@ -1,6 +1,7 @@
 package lippia.web.services;
 
 import com.crowdar.core.actions.ActionManager;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -46,6 +47,16 @@ public class MyAccountLoginService extends ActionManager {
         } else {
             Assert.assertTrue(ActionManager.getElement("xpath://*[@id=\"customer_login\"]/div[1]/h2").isDisplayed( ));
             Assert.assertTrue(ActionManager.getElement("xpath://*[@id=\"customer_login\"]/div[2]/h2").isDisplayed( ));
+        }
+    }
+
+    public static void verifyUserIsLoggedOut() {
+        try {
+            if (ActionManager.getElement("xpath://*[@id=\"page-36\"]/div/div[1]/div/p[1]").isDisplayed( )) {
+                clickLogOutLink();
+            }
+        } catch (NoSuchElementException ex) {
+            ex.printStackTrace();
         }
     }
 }

@@ -1,9 +1,10 @@
-@Smoke
+#@Smoke
 Feature: MY ACCOUNT - LOGIN
 
   Background:
     Given The user is in home page URL
     And The user clicks on My Account Menu
+    And The user verify LogOut
 
   @LoginFailHandlesSensitive
   Scenario Outline: Login-Handles case sensitive

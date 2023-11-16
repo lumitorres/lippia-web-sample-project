@@ -1,4 +1,4 @@
-@Smoke
+#@Smoke
 Feature: Shop Page
 
   Background:
