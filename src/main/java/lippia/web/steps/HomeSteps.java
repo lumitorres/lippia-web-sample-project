@@ -45,7 +45,7 @@ public class HomeSteps extends PageSteps {
     }
 
     @And("The user clicks place-order button")
-    public void theUserClicksPlaceOrderButton() throws InterruptedException {
+    public void theUserClicksPlaceOrderButton() {
         HomeService.clickPlaceOrderButton( );
     }
 
@@ -68,7 +68,7 @@ public class HomeSteps extends PageSteps {
     }
 
     @Then("The user navigates to Order confirmation page with order details, bank details, customer details and billing details")
-    public void validateUserIsInOrderDetailsPage() throws InterruptedException {
+    public void validateUserIsInOrderDetailsPage() {
         HomeService.validateUserSeesOrderDetails( );
     }
 

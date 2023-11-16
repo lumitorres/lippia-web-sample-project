@@ -34,7 +34,7 @@ public class HomeService extends ActionManager {
         ActionManager.click(HomeConstants.LOCATOR_CHECKOUT_BUTTON);
     }
 
-    public static void validateDataPageCheckout() throws InterruptedException {
+    public static void validateDataPageCheckout() throws InterruptedException{
         Thread.sleep(2000);
         String checkoutTitle = getText(HomeConstants.LOCATOR_CHECKOUT_PAGE_TITLE);
         Assert.assertEquals(checkoutTitle, HomeConstants.CHECKOUT_PAGE_TITLE_TEXT);
@@ -89,18 +89,24 @@ public class HomeService extends ActionManager {
         Assert.assertTrue(getElement(HomeConstants.LOCATOR_SUB_TOTAL).isDisplayed( ));
     }
 
-    public static void clickPlaceOrderButton() throws InterruptedException {
-        Thread.sleep(4000);
-        WebElement placeOrderButton = getElement(HomeConstants.LOCATOR_PLACE_ORDER_BUTTON);
-        waitClickable(HomeConstants.LOCATOR_PLACE_ORDER_BUTTON);
-        placeOrderButton.click( );
-
+    public static void clickPlaceOrderButton() {
+        try {
+            Thread.sleep(4000);
+            WebElement placeOrderButton = getElement(HomeConstants.LOCATOR_PLACE_ORDER_BUTTON);
+            placeOrderButton.click( );
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public static void validateUserSeesOrderDetails() throws InterruptedException {
-        Thread.sleep(4000);
-        WebElement orderDetailsTitle = getElement(HomeConstants.LOCATOR_ORDER_DETAILS_TITLE);
-        Assert.assertTrue(orderDetailsTitle.isDisplayed( ));
+    public static void validateUserSeesOrderDetails() {
+        try {
+            Thread.sleep(4000);
+            WebElement orderDetailsTitle = getElement(HomeConstants.LOCATOR_ORDER_DETAILS_TITLE);
+            Assert.assertTrue(orderDetailsTitle.isDisplayed( ));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
