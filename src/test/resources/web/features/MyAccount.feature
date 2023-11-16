@@ -1,4 +1,3 @@
-@Smoke
 Feature: My Account
 
   Background:
