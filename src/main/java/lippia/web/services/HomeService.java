@@ -25,7 +25,8 @@ public class HomeService extends ActionManager {
         ActionManager.click(HomeConstants.LOCATOR_VIEW_BASKET_BUTTON);
     }
 
-    public static void validateMenuItemPrice() {
+    public static void validateMenuItemPrice() throws InterruptedException{
+        Thread.sleep(2000);
         String test = getText(HomeConstants.LOCATOR_ITEM_PRICE);
         Assert.assertFalse(test.contains(HomeConstants.ITEM_PRICE_NO_ITEMS));
     }

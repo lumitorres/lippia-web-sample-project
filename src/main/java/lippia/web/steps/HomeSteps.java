@@ -25,7 +25,7 @@ public class HomeSteps extends PageSteps {
     }
 
     @And("The User can view that Book in the Menu item with price")
-    public void verifyMenuItemPRice() {
+    public void verifyMenuItemPRice() throws InterruptedException {
         HomeService.validateMenuItemPrice( );
     }
 
